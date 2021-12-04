@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class 
+public class Pessoa
 {
     
     private String Nome; 
@@ -9,15 +9,29 @@ public class
     private float Altura;
     
     public void setNome(String Nome){
-        this.Nome = Nome;
+        Scanner input = new Scanner ( System.in );
+	    System.out.println("Informe o nome da pessoa: ");
+    	String Name = input.next();
+        this.Nome = Name;
     }
         
     public void setNascimento(int Nascimento){
-        this.Nascimento = 2021 - Nascimento;
+        Scanner input1 = new Scanner ( System.in );
+        System.out.println(" ");
+	    System.out.println("Informe o ano de nascimento da pessoa: ");
+    	String Ano = input1.next();
+    	int Nasce = Integer.parseInt(Ano);
+        this.Nascimento = 2021 - Nasce;
     }
         
     public void setAltura(int Altura){
-        this.Altura = Altura;
+        Scanner input2 = new Scanner ( System.in );
+        System.out.println(" ");
+	    System.out.println("Informe a altura da pessoa: ");
+    	String Alt = input2.next();
+    	float Altur = Integer.parseInt(Alt);
+    	Altur = Altur / 100;
+        this.Altura = Altur;
     }
     
     public String getNome(){
@@ -33,28 +47,13 @@ public class
     }
     
     public static void main(String[] args) {
-      //Nome
-	    Scanner input = new Scanner ( System.in );
-	    System.out.println("Informe o nome da pessoa: ");
-    	String Name = input.next();
-    	
-    	//Ano de Nascimento
-    	Scanner input1 = new Scanner ( System.in );
-	    System.out.println("Informe o ano de nascimento da pessoa: ");
-    	String Ano = input1.next();
-    	int Nasce = Integer.parseInt(Ano);
-    	
-    	//Altura
-    	Scanner input2 = new Scanner ( System.in );
-	    System.out.println("Informe a altura da pessoa: ");
-    	String Alt = input2.next();
-    	float Altur = Integer.parseInt(Alt);
-    	
-	    Main pessoa = new Main();
-	    pessoa.Nome = Name;
-	    pessoa.Nascimento = 2021 - Nasce;
-	    pessoa.Altura = Altur;
-		System.out.println(pessoa.getNome());
-		System.out.println(pessoa.getNascimento());
-		System.out.println(pessoa.getAltura());
+	    Pessoa pessoa = new Pessoa();
+	    pessoa.setNome("Alex");
+	    pessoa.setNascimento(1);
+	    pessoa.setAltura(1);
+	    System.out.println(" ");
+		System.out.println("Nome: " + pessoa.getNome());
+		System.out.println("Idade: " + pessoa.getNascimento());
+		System.out.println("Altura: " + pessoa.getAltura());
 	}
+}
