@@ -14,11 +14,21 @@ public class Edificio
         String pessoal = input.next();
         capacidad = Integer.parseInt(pessoal);
         this.capacidade = capacidad;
+        if(this.capacidade <= 0){
+            System.out.println(" ");
+            System.out.println("Só é possível informar números naturais... ");
+            System.exit(0);
+        }
         
         System.out.println("Informe o total de andares do edifício: ");
         String andando = input1.next();
         totalanda = Integer.parseInt(andando);
         this.totalandar = totalanda;
+        if(this.totalandar <= 0){
+            System.out.println(" ");
+            System.out.println("Só é possível informar números naturais... ");
+            System.exit(0);
+        }
         System.out.println(" ");
     }
     
@@ -26,6 +36,7 @@ public class Edificio
         if(this.pessoasnoelevador < this.capacidade){
             this.pessoasnoelevador = this.pessoasnoelevador + 1;
         }else{
+            System.out.println(" ");
             System.out.println("Não há mais espaço no elevador...");
         }    
     }
@@ -34,6 +45,7 @@ public class Edificio
         if(this.pessoasnoelevador > 0){
             this.pessoasnoelevador = this.pessoasnoelevador - 1;
         }else{
+            System.out.println(" ");
             System.out.println("Não há pessoas para saírem do elevador...");
         }  
     }
@@ -42,6 +54,7 @@ public class Edificio
         if(this.andar < this.totalandar){
             this.andar = this.andar + 1;
         }else{
+            System.out.println(" ");
             System.out.println("Você chegou no último andar...");
         }
     }
@@ -50,6 +63,7 @@ public class Edificio
         if(this.andar > 0){
             this.andar = this.andar - 1;
         }else{
+            System.out.println(" ");
             System.out.println("Você está no térreo...");
         }
         
